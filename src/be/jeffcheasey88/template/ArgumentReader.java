@@ -16,6 +16,7 @@ public class ArgumentReader{
 	private File readFile;
 	private File writeFile;
 	private boolean writeOutput;
+	private String data = "";
 	
 	public ArgumentReader(String[] args){
 		for(int i = 0; i < args.length; i++){
@@ -31,8 +32,27 @@ public class ArgumentReader{
 					continue;
 				}
 				writeFile = new File(args[++i]);
-			}
+			}else data+=s;
 		}
 	}
 	
+	public boolean readInput(){
+		return this.readInput;
+	}
+	
+	public File readFile(){
+		return this.readFile;
+	}
+	
+	public File writeFile(){
+		return this.writeFile;
+	}
+	
+	public boolean writeOutput(){
+		return this.writeOutput;
+	}
+	
+	public String getData(){
+		return this.data;
+	}
 }

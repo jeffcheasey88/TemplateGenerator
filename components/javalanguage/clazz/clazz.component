@@ -1,0 +1,7 @@
+package %package%;
+%import%
+%modifier%class %name%%extends%{
+
+	%body%
+
+}

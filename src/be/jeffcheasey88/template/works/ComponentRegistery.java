@@ -6,6 +6,8 @@ import java.net.URLClassLoader;
 import java.util.HashMap;
 import java.util.Map;
 
+import be.jeffcheasey88.template.ArgumentReader;
+
 public class ComponentRegistery{
 	
 	private Map<String, Map<String, Component>> map;
@@ -22,6 +24,12 @@ public class ComponentRegistery{
 			map.put(file.getName(), language);
 		}
 	}
+	
+	public void build(Bag data, ArgumentReader reader){
+		String language = data.get("language");
+		String template = data.get("template");
+		map.get(language).get(template).build(data, reader);
+	}
 		
 	private void load(Map<String, Component> map, File dir, File file) throws Exception{
 		if(file.isDirectory()){
@@ -30,7 +38,6 @@ public class ComponentRegistery{
 		}
 		
 		if(file.getName().endsWith(".class")){
-			System.out.println(file.getAbsolutePath().substring(dir.getAbsolutePath().length()+1).replace("/", ".").replace("\\", ".").replace(".class", ""));
 			Class<?> clazz = new URLClassLoader(new URL[]{dir.toURI().toURL()}).loadClass(file.getAbsolutePath().substring(dir.getAbsolutePath().length()+1).replace("/", ".").replace("\\", ".").replace(".class", ""));
 			if(!clazz.getSuperclass().getName().equals("be.jeffcheasey88.template.works.Component")) return;
 			Component component = (Component) clazz.newInstance();

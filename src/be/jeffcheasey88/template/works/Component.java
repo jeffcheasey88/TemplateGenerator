@@ -61,7 +61,7 @@ public abstract class Component{
 		BufferedReader reader = new BufferedReader(new FileReader(file));
 		String line;
 		String result = "";
-		while((line = reader.readLine()) != null) result+=line;
+		while((line = reader.readLine()) != null) result+=line+"\n";
 		reader.close();
 		return result;
 	}

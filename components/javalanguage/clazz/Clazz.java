@@ -34,6 +34,7 @@ public class Clazz extends Component{
 		if(!data.has("modifier")) data.set("modifier","");
 		if(!data.has("import")) data.set("import","");
 		if(!data.has("extends")) data.set("extends","");
+		if(!data.has("body")) data.set("body","");
 		return true;
 	}
 }

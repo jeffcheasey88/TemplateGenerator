@@ -1,0 +1,12 @@
+import 'dart:developer';
+
+import 'package:bloc/bloc.dart';
+import 'package:equatable/equatable.dart';
+
+part '%lname%_event.dart';
+part '%lname%_state.dart';
+
+class %name%Bloc extends Bloc<%name%Event, %name%State> {
+  %name%Bloc() super(const %name%State()) {}
+
+}

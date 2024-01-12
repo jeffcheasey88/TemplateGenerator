@@ -12,11 +12,8 @@ public class Bag{
 	
 	private Object value;
 	
-	private String path = "";
-	
 	public Bag(){
 		this.map = new HashMap<>();
-		path = Thread.currentThread().getStackTrace()[2].toString();
 	}
 	
 	public Set<String> keys(){
@@ -25,14 +22,6 @@ public class Bag{
 	
 	public <E> E get(){
 		return (E) this.value;
-	}
-	
-	public void addPath(String s){
-		path+=s;
-	}
-	
-	public String path(){
-		return this.path;
 	}
 	
 	public void set(Object value){

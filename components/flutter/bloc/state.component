@@ -1,0 +1,12 @@
+part of '%lname%_bloc.dart';
+
+class %name%State extends Equatable {
+  const %name%State();
+
+  %name%State copyWith() {
+    return %name%State();
+  }
+
+  @override
+  List<Object> get props => [];
+}

@@ -1,0 +1,15 @@
+{
+	bloc.component -> bloc
+	event.component -> event
+	state.component -> state
+}
+{
+	if(!name) return false
+	uname = name
+	lname = name.toLowerCase()
+}
+{
+	bloc > %lname%/bloc/%lname%_bloc.dart
+	event > %lname%/bloc/%lname%_event.dart
+	state > %lname%/bloc/%lname%_state.dart
+}

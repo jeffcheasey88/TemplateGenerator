@@ -21,7 +21,7 @@ public abstract class Component{
 	
 	public void build(ArgumentReader args, Bag output){
 		if(args.writeOutput()){
-			System.out.println(output.<String>get());
+			if(output.get() != null) System.out.println(output.<String>get());
 			for(String key : output.keys()) System.out.println(output.<String>get(key));
 			System.out.println();
 		}else{
